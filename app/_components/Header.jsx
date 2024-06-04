@@ -1,26 +1,28 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
+import { Plus } from 'lucide-react';
 
 function Header() {
   return (
-    <div>
-        <div> 
+    <div className='p-6 px-10 flex justify-between items-center shadow-sm fixed top-0 w-full z-10 bg-white'>
+        <div className='flex gap-12 items-center'> 
             <Image src={'/1-nobg.png'} width={150} height={150} alt="logo" />
-             <ul className='md:flex gap-10'>
-                <li> For Rent</li>
-                <li> For Sale</li>
-                <li> Agent Finder</li>
+             <ul className='hidden md:flex gap-10'>
+                <li className='hover:text-primary font-medium cursor-pointer text-sm'> For Rent</li>
+                <li className='hover:text-primary font-medium cursor-pointer text-sm'> For Sale</li>
+                <li className='hover:text-primary font-medium cursor-pointer text-sm'> Agent Finder</li>
             </ul>
-        </div>
-        <div>
-            <Button><Plus/> Add a new listing</Button>
+            </div>
+        <div className='flex gap-2'>
+            <Button className='flex gap-2'><Plus className='h-5 w-5'/> Add new listing</Button>
+            <Button variant="outline">Login</Button>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 
 
